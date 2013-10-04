@@ -1,0 +1,73 @@
+@(user: User, userRanking: Movie.Ranking, generalRanking: Movie.Ranking)
+
+@displayRanking(ranking: Movie.Ranking) = {
+    <table class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th style="width: 3%;"></th>
+                <th>@Messages.get("movie")</th>
+                <th style="width: 15%;">Votos / Total</th>
+                <th class="text-center">%</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for(i <- 1 to ranking.movies.size()) {
+                @defining(ranking.movies.get(i-1)) { movie =>
+                    <tr>
+                        <td>@i</td>
+                        <td>@movie.title</td>
+                        <td>@movie.totalVotes / @ranking.total</td>
+                        <td>
+                            @defining(movie.totalVotes * 100 / ranking.total) { percent =>
+                                <div class="progress progress-info progress-striped">
+                                    <div class="bar" style="width: @percent%"></div>
+                                </div>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+
+    </table>
+}
+
+@import helper._
+@import play.i18n._
+
+@main {
+
+    @if(user != null) {
+        <div class="row-fluid">
+            <h1 class="text-center">@Messages.get("views.ranking.thanks", user.name)</h1>
+        </div>
+
+        <hr>
+
+        <div class="row-fluid">
+
+            <h3>@Messages.get("views.ranking.yourRanking") <a href="@routes.Application.index()" class="btn btn-success"> @Messages.get("views.ranking.newPoll")</a></h3>
+
+            @displayRanking(userRanking)
+
+        </div>
+    }
+
+    @if(generalRanking.total == 0) {
+
+        <h3>@Messages.get("views.ranking.noVote") <a href="@routes.Application.index()">@Messages.get("views.ranking.here")</a>.</h3>
+
+    } else {
+
+        <div class="row-fluid">
+            <h3>@Messages.get("views.ranking.generalRanking")</h3>
+
+            @displayRanking(generalRanking)
+
+        </div>
+
+    }
+
+}

@@ -1,0 +1,19 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.progress {
+    margin-bottom: 0px;
+}
+
+.movie:hover {
+    -webkit-box-shadow: #ccc 0 3px 6px;
+    -moz-box-shadow: #ccc 0 3px 6px;
+    box-shadow: #ccc 0 3px 6px;
+}
+
+.synopsis {
+    text-overflow: ellipsis;
+    height: 60px;
+}

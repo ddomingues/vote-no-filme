@@ -1,0 +1,30 @@
+error.user.registred=Usuário já cadastrado
+
+project=Vote no filme
+
+movie=Filme
+movie.title=Título
+movie.duration=Duração
+movie.synopsis=Sinopse
+movie.categories=Categorias
+movie.stars=Estrelas
+
+user.name=Nome
+user.email=E-mail
+
+views.main.ranking=Ranking
+
+views.index.title=Qual é o melhor filme?
+views.index.stage=Etapa {0}/{1}
+views.index.minutes=minutos
+
+views.ranking.thanks=Obrigado pela participação {0}!
+views.ranking.newPoll=Nova Votação
+views.ranking.yourRanking=Seu Ranking
+views.ranking.generalRanking=Ranking Geral
+views.ranking.totalVotes=Total / Votos
+views.ranking.noVote=Nenhuma votação foi realizada. Seja o primeiro clicando
+views.ranking.here=aqui
+
+views.users.title=Para finalizar a votação preencha o formulário!
+views.users.finalize=Finalizar

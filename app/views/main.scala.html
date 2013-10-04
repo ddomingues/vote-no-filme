@@ -1,0 +1,42 @@
+@(content: Html)
+
+@import play.i18n._
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Messages.get("project")</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-responsive.min.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand active" href="/">Bluesoft</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="@routes.Application.ranking(null)">@Messages.get("views.main.ranking")</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        @content
+    </div>
+    <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+    <script>
+        $('.movie').on('click', function() {
+            $('form', this).submit();
+        });
+    </script>
+</body>
+</html>

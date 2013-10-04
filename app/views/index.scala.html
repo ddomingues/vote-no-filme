@@ -1,0 +1,44 @@
+@(vote: Vote, stage: Integer, totalStages: Integer)
+
+@import helper._
+@import play.i18n._
+
+@main {
+
+    <div class="row-fluid">
+        <h1 class="text-center">@Messages.get("views.index.title")</h1>
+        <hr>
+        <label>@Messages.get("views.index.stage", stage, totalStages)</label>
+    </div>
+    <div class="row-fluid">
+        @for(i <- 1 to vote.options.size()) {
+            @defining(vote.options.get(i-1)) { option =>
+
+                <div class="span5 movie well" style="cursor: pointer">
+                    @form(routes.Application.vote(option.id)) {
+                        <div class="media">
+                            <h3 class="text-center">@option.title</h4>
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="@routes.Assets.at("images/"+option.id+".jpg")">
+                            </a>
+                            <div class="media-body">
+                                <div><strong>@Messages.get("movie.stars"):</strong> @option.stars</div>
+                                <div><strong>@Messages.get("movie.duration"):</strong> @option.duration @Messages.get("views.index.minutes")</div>
+                                <div><strong>@Messages.get("movie.categories"):</strong> @option.categories</div>
+                                <div class="synopsis"><strong>@Messages.get("movie.synopsis"):</strong> @option.synopsis</div>
+                            </div>
+
+                        </div>
+                    }
+
+                </div>
+
+            }
+
+            @if(i < vote.options.size()) {
+                <div class="span2 text-center"><h1>vs</h1></div>
+            }
+
+        }
+    </div>
+}

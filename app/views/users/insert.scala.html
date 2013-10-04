@@ -1,0 +1,37 @@
+@(userForm: Form[User])
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@import helper._
+@import play.i18n._
+
+@main {
+
+    <h1>@Messages.get("views.users.title")</h1>
+
+    <hr>
+
+    @if(userForm.hasErrors && userForm("email").errors.nonEmpty) {
+        @for(error <- userForm("email").errors) {
+
+            @if(error.message.equals("error.user.registred")) {
+                <div class="alert alert-error">
+                    @Messages.get(error.message)
+                </div>
+            }
+
+        }
+
+    }
+
+    @form(routes.Users.save()) {
+
+        @inputText(userForm("name"), '_label -> Messages.get("user.name"))
+        @inputText(userForm("email"), '_label -> Messages.get("user.email"))
+
+        <div class="actions">
+            <input type="submit" value="@Messages.get("views.users.finalize")" class="btn btn-primary btn-success">
+        </div>
+
+    }
+}

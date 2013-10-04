@@ -1,0 +1,37 @@
+# Movies
+movies:
+
+    - &1 !!models.Movie
+        title:        'Jobs'
+        stars:        'Ashton Kutcher, Josh Gad, Annika Bertea'
+        duration:     128
+        categories:   'Drama'
+        synopsis:     'A história da ascensão de Steve Jobs, de rejeitado no colégio até tornar-se um dos mais reverenciados empresários do universo da tecnologia no século 20. A trama passa pela jornada de autodescobrimento da juventude, pelos demônios pessoais que obscureceram sua visão e, finalmente, pelos triunfos que transformaram sua vida adulta.'
+
+    - &2 !!models.Movie
+        title:        'Elysium'
+        stars:        'Matt Damon, Jodie Foster, Sharlto Copley, Alice Braga, Diego Luna, William Fichtner, Wagner Moura, Jose Pablo Cantillo'
+        duration:     190
+        categories:   'Ficção'
+        synopsis:     'Em 2159, o mundo é dividido entre dois grupos: o primeiro, riquíssimo, mora na estação espacial Elysium, enquanto o segundo, pobre, vive na Terra, repleta de pessoas e em grande decadência. Por um lado, a secretária do governo Rhodes faz de tudo para preservar o estilo de vida luxuoso de Elysium, por outro, um pobre cidadão da Terra tenta um plano ousado para trazer de volta a igualdade entre as pessoas.'
+
+    - &3 !!models.Movie
+        title:        'Familia do Bagulho'
+        stars:        'Jennifer Aniston, Jason Sudeikis, Emma Roberts, Will Poulter, Ed Helms, Nick Offerman, Kathryn Hahn, Molly C. Quinn'
+        duration:     110
+        categories:   'Comédia'
+        synopsis:     'Um traficante de drogas veterano tem em mãos a chance de receber do México um grande carregamento de maconha. Para fechar negócio, ele resolve criar uma família falsa, de forma que ninguém desconfie do que está realmente acontecendo.'
+
+    - &4 !!models.Movie
+        title:        'Os Estagiários'
+        stars:        'Vince Vaughn, Owen Wilson, Rose Byrne, Max Minghella, Josh Gad, Rob Riggle, Joanna Garcia, John Goodman'
+        duration:     122
+        categories:   'Comédia'
+        synopsis:     'Quando são demitidos, dois homens na casa dos quarenta anos de idade começam a procurar por novas alternativas de trabalho. Apesar de não conhecerem nada de mídias digitais, eles são contratados como estagiários em uma grande empresa de produtos eletrônicos, onde devem conviver com chefes vinte anos mais novos do que eles.'
+
+    - &5 !!models.Movie
+        title:        'Sem dor, sem ganho'
+        stars:        'Dwayne Johnson, Mark Wahlberg, Anthony Mackie, Rebel Wilson, Ken Jeong, Ed Harris, William Haze, Tony Shalhoub'
+        duration:     120
+        categories:   'Ação'
+        synopsis:     'Um grupo de fisiculturistas se envolve em uma série de extorsões e assassinatos'
