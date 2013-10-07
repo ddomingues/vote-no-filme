@@ -24,7 +24,7 @@
 
     }
 
-    @form(routes.Users.save()) {
+    @form(routes.Polls.create()) {
 
         @inputText(userForm("name"), '_label -> Messages.get("user.name"))
         @inputText(userForm("email"), '_label -> Messages.get("user.email"))

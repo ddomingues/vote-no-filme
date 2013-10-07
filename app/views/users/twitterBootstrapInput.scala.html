@@ -6,9 +6,16 @@
 * Generate input according twitter bootsrap rules *
 **************************************************@
 <div class="control-group @if(elements.hasErrors) {alert alert-error}">
-    <label for="@elements.id">@elements.label</label>
+    <label for="@elements.id">@elements.label @if(elements.infos.contains("Required")) {*}</label>
     <div class="input">
         @elements.input
-        <span class="help-inline">@elements.infos.mkString(", ")</span> 
+
+        @if(elements.hasErrors) {
+            <span class="help-inline">
+                @for(info <- elements.infos) {
+                    @Messages.get(info)
+                }
+            </span>
+        }
     </div>
 </div>

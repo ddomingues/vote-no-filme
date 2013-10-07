@@ -61,45 +61,4 @@ public class Application extends Controller {
                 )
             );
     }
-
-    @Transactional(readOnly = true)
-    public static Result vote(Long idMovie) {
-
-        Poll poll = getPoll();
-        poll.vote(new Movie(idMovie));
-
-        if (poll.isFinalized()) {
-
-            return redirect(
-                routes.Users.newUser()
-            );
-
-        } else {
-
-            return HOME;
-        }
-
-    }
-
-    @Transactional(readOnly = true)
-    public static Result ranking(String email) {
-        User user = null;
-        Movie.Ranking userRanking = null;
-        Movie.Ranking generalRanking = Movie.getRanking();
-
-        if (email != null) {
-            user = User.getByEmail(email);
-
-            if (user != null)
-                userRanking = Movie.getRankingByUser(user);
-        }
-
-        return ok(
-            ranking.render(
-                    user,
-                    userRanking,
-                    generalRanking
-            )
-        );
-    }
 }

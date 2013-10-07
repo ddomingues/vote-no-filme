@@ -15,7 +15,7 @@
             @defining(vote.options.get(i-1)) { option =>
 
                 <div class="span5 movie well" style="cursor: pointer">
-                    @form(routes.Application.vote(option.id)) {
+                    @form(routes.Polls.vote(option.id)) {
                         <div class="media">
                             <h3 class="text-center">@option.title</h4>
                             <a class="pull-left" href="#">

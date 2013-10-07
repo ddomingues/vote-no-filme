@@ -41,14 +41,14 @@
 
     @if(user != null) {
         <div class="row-fluid">
-            <h1 class="text-center">@Messages.get("views.ranking.thanks", user.name)</h1>
+            <h1 class="text-center">@Messages.get("views.polls.ranking.thanks", user.name)</h1>
         </div>
 
         <hr>
 
         <div class="row-fluid">
 
-            <h3>@Messages.get("views.ranking.yourRanking") <a href="@routes.Application.index()" class="btn btn-success"> @Messages.get("views.ranking.newPoll")</a></h3>
+            <h3>@Messages.get("views.polls.ranking.yourRanking") <a href="@routes.Application.index()" class="btn btn-success"> @Messages.get("views.polls.ranking.newPoll")</a></h3>
 
             @displayRanking(userRanking)
 
@@ -57,12 +57,12 @@
 
     @if(generalRanking.total == 0) {
 
-        <h3>@Messages.get("views.ranking.noVote") <a href="@routes.Application.index()">@Messages.get("views.ranking.here")</a>.</h3>
+        <h3>@Messages.get("views.polls.ranking.noVote") <a href="@routes.Application.index()">@Messages.get("views.polls.ranking.here")</a>.</h3>
 
     } else {
 
         <div class="row-fluid">
-            <h3>@Messages.get("views.ranking.generalRanking")</h3>
+            <h3>@Messages.get("views.polls.ranking.generalRanking")</h3>
 
             @displayRanking(generalRanking)
 

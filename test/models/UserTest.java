@@ -56,7 +56,7 @@ public class UserTest extends BaseTest {
             User user = new User("Diego Domingues", "diego.domingues16@gmail.com");
             user.save();
 
-            User retrievedUser = User.getByEmail(user.email);
+            User retrievedUser = User.findByEmail(user.email);
 
             assertThat(retrievedUser).isNotNull();
             assertThat(user).isEqualTo(retrievedUser);

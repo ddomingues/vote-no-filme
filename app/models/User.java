@@ -28,7 +28,7 @@ public class User extends BaseEntity {
     public List<ValidationError> validate() {
         List<ValidationError> errors = new ArrayList<>();
 
-        if (this.email != null && User.getByEmail(this.email) != null)
+        if (this.email != null && User.findByEmail(this.email) != null)
             errors.add(new ValidationError("email", "error.user.registred"));
 
         return errors.isEmpty()? null: errors;
@@ -44,7 +44,7 @@ public class User extends BaseEntity {
         this.email = email;
     }
 
-    public static User getByEmail(String email) {
+    public static User findByEmail(String email) {
         List<User> users = JPA.em().createQuery("from User where email = :email")
                 .setParameter("email", email)
                 .getResultList();
